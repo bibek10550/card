@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#777, #222);
+    /* circle shape background multi color */
+}
+
+.card {
+    position: relative;
+    width: 340px;
+    height: 450px;
+    background: #fff;
+    /* border: 20px solid blueviolet; */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #333;
+    clip-path: circle();
+    /* shape changes from rectangle to circle */
+    transform: translateX(-50%);
+    left: 50%;
+    top: -190px;
+}
+
+.circle::before {
+    /* before circle class property */
+    content: '';
+    /* content nothing */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: 0 0 0 20px rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+    top: -8px;
+    left: -16px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.circle .imgBx {
+    position: absolute;
+    width: 340px;
+    height: 310px;
+    background: #ff0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.circle .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    transition: 0.5s;
+    /* transform-origin: top; */
+}
+
+.circle .imgBx:hover img {
+    transform: scale(1.5);
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    /* background: #777; */
+    left: 0;
+    bottom: 0;
+    padding: 20px 30px;
+}
+
+.fa-linkedin {
+    background: #0077b5;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.content h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 7px;
+    margin-bottom: 2px;
+}
+
+.textIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textIcon h4 {
+    font-weight: 400;
+    color: #e91e63;
+}
+
+.textIcon .fa {
+    color: #e91e63;
+}
